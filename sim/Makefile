@@ -6,4 +6,4 @@ iver:
 	iverilog -y ../rtl gcdtb.v
 
 clean:
-	rm -rf a.out
+	rm -rf a.out *~ trace.vcd

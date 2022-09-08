@@ -80,7 +80,14 @@ module hgcd(
 		 rdyvar = 1'b1;		 
 		 state_next = S00;
 	      end
-	    else if (ld)
+	    else if (ld & rdy2)
+	      begin
+		 qvar = q2;
+		 rdyvar = 1'b1;		 
+		 ld1 = 1'b1;
+		 state_next = S01;		 
+	      end
+	    else if (ld * !rdy2)
 	      begin
 		 ld1 = 1'b1;
 		 state_next = S11;
